@@ -1,0 +1,10 @@
+# Python 3.14; entorno verificado para semana 8.
+numpy==2.4.6
+pandas==3.0.3
+scipy==1.18.0
+scikit-learn==1.9.0
+matplotlib==3.10.8
+pyproj==3.8.0
+nbformat==5.10.4
+nbclient==0.10.2
+ipykernel==7.1.0

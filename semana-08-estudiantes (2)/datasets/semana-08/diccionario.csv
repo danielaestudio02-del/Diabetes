@@ -1,0 +1,11 @@
+variable,tipo,unidad,uso
+source_row,entero,posición original desde cero,Trazabilidad; excluir del modelo
+pickup_datetime,fecha,UTC según archivo fuente,Separación temporal; no convertir a hora local sin verificar origen
+pickup_longitude,real,grados WGS84,Auditoría y transformación
+pickup_latitude,real,grados WGS84,Auditoría y transformación
+x_km,real,km este relativo,Entrada del modelo; (UTM este - 585000)/1000
+y_km,real,km norte relativo,Entrada del modelo; (UTM norte - 4510000)/1000
+fare_amount,real,moneda no verificada,Contexto; no se modela ni se usa para filtrar ubicación
+passenger_count,entero,personas según fuente,Contexto; valores extremos auditados
+dropoff_longitude,real,grados WGS84,Extensión; puede contener errores o faltantes
+dropoff_latitude,real,grados WGS84,Extensión; puede contener errores o faltantes

@@ -1,0 +1,32 @@
+{
+  "source_filename": "uber (1).csv",
+  "source_sha256": "94ab9d3bb2a1a987b8d89407047bcb541b17e765b31537fbf36e5c14b71e1e18",
+  "source_provenance": "Archivo suministrado por el docente; proveedor y licencia no verificados.",
+  "rows_raw": 200000,
+  "rows_2014_area": 29340,
+  "rows_development_pool": 22029,
+  "rows_development_sample": 6000,
+  "rows_temporal_test": 7311,
+  "rows_hierarchy": 500,
+  "seed": 42,
+  "bbox_lonlat": [
+    -74.3,
+    -73.65,
+    40.45,
+    40.95
+  ],
+  "crs": "EPSG:32618",
+  "origin_meters": [
+    585000.0,
+    4510000.0
+  ],
+  "units": "km",
+  "timestamp_policy": "Se respeta UTC tal como viene codificado. No se infiere hora local.",
+  "full_duplicate_rows": 0,
+  "repeated_key": 0,
+  "repeated_pickup_coordinates": 4013,
+  "fare_nonpositive": 22,
+  "passengers_zero_or_above_6": 710,
+  "date_min": "2009-01-01 01:15:22+00:00",
+  "date_max": "2015-06-30 23:40:39+00:00"
+}

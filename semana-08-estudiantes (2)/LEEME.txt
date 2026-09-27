@@ -1,0 +1,5 @@
+Semana 8: GMM, KDE, DBSCAN; refuerzos K-means y jerárquico.
+Extraer todo el ZIP. Instalar requirements-week8.txt en un entorno Python 3.14.
+Abrir los cuadernos desde esta carpeta o notebooks/semana-08.
+Conservar datasets/ y movilidad.py en sus rutas.
+El test temporal se consulta solo después de seleccionar parámetros con desarrollo.

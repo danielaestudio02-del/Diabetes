@@ -67,7 +67,7 @@ s += [P("1. Objetivo de negocio", h2),
 kpis = [("69 987", "pacientes analizados<br/>(99 340 ingresos, ninguno descartado<br/>por ser repetido)"),
         ("3 segmentos", "recurrentes o en transición:<br/>36 % de los pacientes"),
         ("18.8–25.4 %", "readmisión en esos segmentos<br/>frente a 10.4 % de promedio"),
-        ("0.88 vs 0.67", "estabilidad de los grupos (ARI)<br/>con historial vs. solo primer ingreso")]
+        ("50 % en 4.3 %", "la mitad de los pacientes cabe en<br/>el 4.3 % del plano (cresta)")]
 kt = Table([[[P(n, kpi_n), P(t, kpi_t)] for n, t in kpis]], colWidths=[W / 4] * 4)
 kt.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), SOFT), ("VALIGN", (0, 0), (-1, -1), "TOP"),
                         ("LINEAFTER", (0, 0), (-2, -1), 2, colors.white), ("TOPPADDING", (0, 0), (-1, -1), 6),
@@ -81,8 +81,8 @@ s += [P("2. Hallazgos principales", h2),
         "tienen ~25 % de readmisión en su primer ingreso, 2.4 veces el promedio; <i>En transición</i> (22 %) tiene 18.8 %."),
       B("<b>Carga no es riesgo:</b> el segmento <i>Un solo ingreso, complejo</i> (25 %; 5 días, 18 medicamentos, 75 años) consume muchos recursos "
         "por ingreso pero se readmite menos que el promedio (5.5 %)."),
-      B("<b>Usar todo el historial da grupos más confiables:</b> con el historial agregado K-means reproduce casi la misma partición al remuestrear "
-        "(ARI 0.88) frente a 0.67 usando solo el primer ingreso de cada paciente."),
+      B("<b>La división cresta / recurrentes es robusta; las 8 componentes no:</b> al remuestrear los datos, K-means (ARI 0.88) y "
+        "DBSCAN (0.79) reproducen casi la misma partición, mientras que el GMM de 8 componentes cambia bastante (0.48)."),
       B("<b>Dos advertencias honestas:</b> la readmisión está en parte construida en los ejes (una readmisión es otro ingreso) y los pacientes "
         "más recientes tienen menos tiempo para volver (censura). Por eso las tasas se leen como descripción, no como prueba.")]
 
@@ -130,8 +130,8 @@ s += [P("4. Evidencia de los tres métodos", h2),
              ["GMM: covarianza completa → diagonal", "K por BIC pasa de 8 a 10 (borde de la rejilla)", "El número de componentes no es un número de perfiles reales"],
              ["KDE: h = 0.1 → 0.2 → 1.6 d.e.", "Región del 50 %: 8 islas → 3 regiones → 1 loma", "La cresta densa permanece en los anchos razonables"],
              ["DBSCAN: eps = 0.15 → 0.3 → 0.6 (m = 15)", "10 grupos (81 % cubierto) → 2 (95 %) → 1 (99 %)", "La masa principal permanece; los grupos pequeños no"],
-             ["Unidad: primer ingreso → historial agregado", "Estabilidad K-means 0.67 → 0.88; DBSCAN 0.78 → 0.79; GMM 0.73 → 0.48",
-              "El historial da particiones más reproducibles, salvo el GMM de 8 piezas"]],
+             ["Remuestreo bootstrap (20 repeticiones)", "Estabilidad (ARI): K-means 0.88; DBSCAN 0.79; GMM 0.48",
+              "La división cresta / recurrentes permanece; las 8 componentes del GMM no"]],
             [4.6 * cm, 5.9 * cm, W - 10.5 * cm], fs=7.2),
       P("La silhouette se estima sobre una submuestra fija de 1 000 pacientes; con eps = 0.3 no está definida porque el grupo de 15 pacientes casi no "
         "aparece en esa submuestra. Por eso la configuración no se eligió por silhouette, sino por escala (92 % de los pacientes tiene 15 vecinos a menos "
@@ -197,8 +197,7 @@ s += [P("8. Recomendaciones operativas", h2),
         "(no se puede evaluar la dependencia entre pacientes del mismo centro)."),
       B("<b>Densidad no es demanda:</b> la concentración de pacientes en una zona no indica cuántos recursos necesita; un paciente recurrente consume varios ingresos."),
       P("10. Reproducibilidad", h2),
-      P("Todo el análisis está en <b>semana08_pacientes_agregados.ipynb</b> (ejecutado de principio a fin, semilla 42). El notebook hermano "
-        "<b>semana08_clustering_diabetes.ipynb</b> repite el laboratorio con solo el primer ingreso de cada paciente y sirve de comparación. Las "
+      P("Todo el análisis está en <b>semana08_pacientes_agregados.ipynb</b> (ejecutado de principio a fin, semilla 42). Las "
         "figuras y cifras de este informe se regeneran con <font name='DV'>python informe/figuras_semana8.py</font> y el PDF con "
         "<font name='DV'>python informe/generar_informe.py</font>, desde la raíz del repositorio. Fuente del dataset: Strack et al. (2014), "
         "<i>BioMed Research International</i>; guía metodológica: <i>semana-08.html</i> y los cuadernos de la semana 8.")]

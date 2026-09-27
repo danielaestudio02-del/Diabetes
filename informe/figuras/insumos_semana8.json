@@ -1,0 +1,403 @@
+{
+ "base1": 0.10383333333333333,
+ "basea": 0.141,
+ "segmentos": {
+  "Frontera cresta–abanico": {
+   "n": 420,
+   "multi": 0.2381,
+   "meds": 15.0,
+   "enc": 1.0,
+   "hosp": 0.0,
+   "est": 4.0,
+   "diag": 8.0,
+   "edad": 65.0,
+   "r1": 0.069,
+   "ra": 0.0738,
+   "share": 0.07,
+   "share_test": 0.0622,
+   "r1_test": 0.0368
+  },
+  "En transición": {
+   "n": 1314,
+   "multi": 0.4863,
+   "meds": 14.75,
+   "enc": 1.0,
+   "hosp": 1.0,
+   "est": 4.0,
+   "diag": 8.0,
+   "edad": 65.0,
+   "r1": 0.188,
+   "ra": 0.1986,
+   "share": 0.219,
+   "share_test": 0.2255,
+   "r1_test": 0.135
+  },
+  "Un solo ingreso, complejo": {
+   "n": 1512,
+   "multi": 0.0,
+   "meds": 18.0,
+   "enc": 1.0,
+   "hosp": 0.0,
+   "est": 5.0,
+   "diag": 9.0,
+   "edad": 75.0,
+   "r1": 0.0549,
+   "ra": 0.0549,
+   "share": 0.252,
+   "share_test": 0.3601,
+   "r1_test": 0.0261
+  },
+  "Punta de la cresta (ajuste técnico)": {
+   "n": 17,
+   "multi": 0.0588,
+   "meds": 5.0,
+   "enc": 1.0,
+   "hosp": 0.0,
+   "est": 1.0,
+   "diag": 3.0,
+   "edad": 35.0,
+   "r1": 0.0,
+   "ra": 0.0,
+   "share": 0.0028,
+   "share_test": 0.003,
+   "r1_test": 0.0161
+  },
+  "Muy recurrentes": {
+   "n": 205,
+   "multi": 0.9854,
+   "meds": 17.75,
+   "enc": 5.0,
+   "hosp": 3.0,
+   "est": 4.6667,
+   "diag": 8.5,
+   "edad": 65.0,
+   "r1": 0.2537,
+   "ra": 0.6927,
+   "share": 0.0342,
+   "share_test": 0.0212,
+   "r1_test": 0.2674
+  },
+  "Un solo ingreso, moderado": {
+   "n": 1395,
+   "multi": 0.0,
+   "meds": 12.0,
+   "enc": 1.0,
+   "hosp": 0.0,
+   "est": 3.0,
+   "diag": 5.0,
+   "edad": 65.0,
+   "r1": 0.028,
+   "ra": 0.028,
+   "share": 0.2325,
+   "share_test": 0.1839,
+   "r1_test": 0.0186
+  },
+  "Un solo ingreso, breve": {
+   "n": 469,
+   "multi": 0.0,
+   "meds": 6.0,
+   "enc": 1.0,
+   "hosp": 0.0,
+   "est": 2.0,
+   "diag": 4.0,
+   "edad": 55.0,
+   "r1": 0.0085,
+   "ra": 0.0085,
+   "share": 0.0782,
+   "share_test": 0.0504,
+   "r1_test": 0.0076
+  },
+  "Recurrentes": {
+   "n": 668,
+   "multi": 0.8713,
+   "meds": 15.3333,
+   "enc": 3.0,
+   "hosp": 2.0,
+   "est": 4.0,
+   "diag": 8.0,
+   "edad": 65.0,
+   "r1": 0.253,
+   "ra": 0.4281,
+   "share": 0.1113,
+   "share_test": 0.0939,
+   "r1_test": 0.2166
+  }
+ },
+ "dbscan_sens": [
+  {
+   "eps": 0.1,
+   "min_samples": 5,
+   "n_clusters": 41,
+   "coverage": 0.872,
+   "largest_share": 0.548,
+   "second_cluster": 1561,
+   "silhouette_1000": -0.253
+  },
+  {
+   "eps": 0.1,
+   "min_samples": 15,
+   "n_clusters": 14,
+   "coverage": 0.632,
+   "largest_share": 0.517,
+   "second_cluster": 216,
+   "silhouette_1000": -0.223
+  },
+  {
+   "eps": 0.1,
+   "min_samples": 30,
+   "n_clusters": 1,
+   "coverage": 0.458,
+   "largest_share": 0.458,
+   "second_cluster": 0,
+   "silhouette_1000": NaN
+  },
+  {
+   "eps": 0.2,
+   "min_samples": 5,
+   "n_clusters": 11,
+   "coverage": 0.965,
+   "largest_share": 0.952,
+   "second_cluster": 16,
+   "silhouette_1000": 0.145
+  },
+  {
+   "eps": 0.2,
+   "min_samples": 15,
+   "n_clusters": 2,
+   "coverage": 0.897,
+   "largest_share": 0.89,
+   "second_cluster": 42,
+   "silhouette_1000": 0.154
+  },
+  {
+   "eps": 0.2,
+   "min_samples": 30,
+   "n_clusters": 5,
+   "coverage": 0.792,
+   "largest_share": 0.554,
+   "second_cluster": 1245,
+   "silhouette_1000": 0.147
+  },
+  {
+   "eps": 0.3,
+   "min_samples": 5,
+   "n_clusters": 2,
+   "coverage": 0.985,
+   "largest_share": 0.982,
+   "second_cluster": 17,
+   "silhouette_1000": 0.581
+  },
+  {
+   "eps": 0.3,
+   "min_samples": 15,
+   "n_clusters": 2,
+   "coverage": 0.947,
+   "largest_share": 0.944,
+   "second_cluster": 15,
+   "silhouette_1000": NaN
+  },
+  {
+   "eps": 0.3,
+   "min_samples": 30,
+   "n_clusters": 1,
+   "coverage": 0.903,
+   "largest_share": 0.903,
+   "second_cluster": 0,
+   "silhouette_1000": NaN
+  },
+  {
+   "eps": 0.4,
+   "min_samples": 5,
+   "n_clusters": 2,
+   "coverage": 0.992,
+   "largest_share": 0.99,
+   "second_cluster": 12,
+   "silhouette_1000": 0.652
+  },
+  {
+   "eps": 0.4,
+   "min_samples": 15,
+   "n_clusters": 2,
+   "coverage": 0.978,
+   "largest_share": 0.975,
+   "second_cluster": 15,
+   "silhouette_1000": 0.586
+  },
+  {
+   "eps": 0.4,
+   "min_samples": 30,
+   "n_clusters": 1,
+   "coverage": 0.942,
+   "largest_share": 0.942,
+   "second_cluster": 0,
+   "silhouette_1000": NaN
+  },
+  {
+   "eps": 0.6,
+   "min_samples": 5,
+   "n_clusters": 1,
+   "coverage": 0.997,
+   "largest_share": 0.997,
+   "second_cluster": 0,
+   "silhouette_1000": NaN
+  },
+  {
+   "eps": 0.6,
+   "min_samples": 15,
+   "n_clusters": 1,
+   "coverage": 0.991,
+   "largest_share": 0.991,
+   "second_cluster": 0,
+   "silhouette_1000": NaN
+  },
+  {
+   "eps": 0.6,
+   "min_samples": 30,
+   "n_clusters": 1,
+   "coverage": 0.982,
+   "largest_share": 0.982,
+   "second_cluster": 0,
+   "silhouette_1000": NaN
+  },
+  {
+   "eps": 0.8,
+   "min_samples": 5,
+   "n_clusters": 1,
+   "coverage": 0.998,
+   "largest_share": 0.998,
+   "second_cluster": 0,
+   "silhouette_1000": NaN
+  },
+  {
+   "eps": 0.8,
+   "min_samples": 15,
+   "n_clusters": 1,
+   "coverage": 0.995,
+   "largest_share": 0.995,
+   "second_cluster": 0,
+   "silhouette_1000": NaN
+  },
+  {
+   "eps": 0.8,
+   "min_samples": 30,
+   "n_clusters": 1,
+   "coverage": 0.992,
+   "largest_share": 0.992,
+   "second_cluster": 0,
+   "silhouette_1000": NaN
+  }
+ ],
+ "kde_cv": [
+  {
+   "h": 0.05,
+   "mean": -4.1637,
+   "std": 0.7975
+  },
+  {
+   "h": 0.1,
+   "mean": -3.0769,
+   "std": 0.2596
+  },
+  {
+   "h": 0.2,
+   "mean": -2.953,
+   "std": 0.1495
+  },
+  {
+   "h": 0.3,
+   "mean": -3.0285,
+   "std": 0.1235
+  },
+  {
+   "h": 0.4,
+   "mean": -3.1049,
+   "std": 0.1093
+  },
+  {
+   "h": 0.6,
+   "mean": -3.235,
+   "std": 0.0918
+  },
+  {
+   "h": 0.8,
+   "mean": -3.3437,
+   "std": 0.0803
+  },
+  {
+   "h": 1.6,
+   "mean": -3.7386,
+   "std": 0.0497
+  }
+ ],
+ "ext": [
+  {
+   "método": "GMM (K=8, full)",
+   "grupos": 8,
+   "cobertura": 1.0,
+   "davies_bouldin": 1.586,
+   "silhouette_1000": 0.141,
+   "ARI_medio": 0.478,
+   "ARI_p10": 0.419
+  },
+  {
+   "método": "K-means (K=8)",
+   "grupos": 8,
+   "cobertura": 1.0,
+   "davies_bouldin": 0.754,
+   "silhouette_1000": 0.395,
+   "ARI_medio": 0.882,
+   "ARI_p10": 0.835
+  },
+  {
+   "método": "DBSCAN (eps=0.3, m=15)",
+   "grupos": 2,
+   "cobertura": 0.947,
+   "davies_bouldin": 0.37,
+   "silhouette_1000": NaN,
+   "ARI_medio": 0.791,
+   "ARI_p10": 0.775
+  }
+ ],
+ "sens": [
+  {
+   "método": "GMM",
+   "variación": "covarianza=full",
+   "resultado": "K por BIC = 8"
+  },
+  {
+   "método": "GMM",
+   "variación": "covarianza=diag",
+   "resultado": "K por BIC = 10"
+  },
+  {
+   "método": "KDE",
+   "variación": "h=0.1",
+   "resultado": "8 región(es) conexas con 50 % de masa; área 3.2% de la ventana"
+  },
+  {
+   "método": "KDE",
+   "variación": "h=0.2",
+   "resultado": "3 región(es) conexas con 50 % de masa; área 4.3% de la ventana"
+  },
+  {
+   "método": "KDE",
+   "variación": "h=1.6",
+   "resultado": "1 región(es) conexas con 50 % de masa; área 17.6% de la ventana"
+  },
+  {
+   "método": "DBSCAN",
+   "variación": "eps=0.15, m=15",
+   "resultado": "10 grupos, cobertura 81.2%, silhouette (1 000 pts) -0.066"
+  },
+  {
+   "método": "DBSCAN",
+   "variación": "eps=0.3, m=15",
+   "resultado": "2 grupos, cobertura 94.7%, silhouette (1 000 pts) nan"
+  },
+  {
+   "método": "DBSCAN",
+   "variación": "eps=0.6, m=15",
+   "resultado": "1 grupos, cobertura 99.1%, silhouette (1 000 pts) nan"
+  }
+ ]
+}
